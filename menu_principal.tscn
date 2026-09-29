@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bf0qax4mu61qg"]
+
+[ext_resource type="Script" uid="uid://ce4xsxo8rhne4" path="res://menu_principal.gd" id="1_ul6ys"]
+[ext_resource type="Texture2D" uid="uid://cuvx8aeshmtdw" path="res://Stone_game_button_background_2K_20260927070249.jpg" id="2_gmcsc"]
+[ext_resource type="Texture2D" uid="uid://q1c4cm35dojx" path="res://Boy_holding_lightning_sword_2K_20260925194610 (2).jpg" id="2_ul6ys"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uejny"]
+texture = ExtResource("2_gmcsc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45vp5"]
+texture = ExtResource("2_gmcsc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dibx"]
+texture = ExtResource("2_gmcsc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0px3w"]
+texture = ExtResource("2_gmcsc")
+
+[node name="MenuPrincipal" type="Control" unique_id=1157282522]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ul6ys")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=328861678]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 1161.0
+offset_bottom = 648.0
+texture = ExtResource("2_ul6ys")
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=1561795369]
+custom_minimum_size = Vector2(1000, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = 360.0
+offset_right = 1310.0
+offset_bottom = 852.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Jugar" type="Button" parent="Menu" unique_id=1367670103]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_uejny")
+text = "Jugar"
+
+[node name="Tutorial" type="Button" parent="Menu" unique_id=650135647]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_45vp5")
+text = "Tutorial"
+
+[node name="Sonido" type="Button" parent="Menu" unique_id=2017465008]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_5dibx")
+text = "Sonido"
+
+[node name="Salir" type="Button" parent="Menu" unique_id=1060694706]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_0px3w")
+text = "Salir"

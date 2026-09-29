@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cjxr7fo0kqed7"]
+
+[ext_resource type="PackedScene" uid="uid://crqf6bwbddgd0" path="res://amaru.tscn" id="1_6ba58"]
+[ext_resource type="Texture2D" uid="uid://57oqju5wgvpd" path="res://Andean_highlands_platformer_game…_2K_20260915191924.jpeg" id="1_lgngo"]
+[ext_resource type="Texture2D" uid="uid://bnvknc3rc0336" path="res://Bolivian_Andean_valley_game_envi…_2K_20260928180829.jpg" id="2_aou4a"]
+[ext_resource type="Texture2D" uid="uid://m1xfx5384jq7" path="res://Andean_mountain_valley_platforme…_2K_20260928202135.jpg" id="3_2hh7m"]
+[ext_resource type="PackedScene" uid="uid://d2ibqhru4u64c" path="res://sapo.tscn" id="3_fw4w5"]
+[ext_resource type="Script" uid="uid://frycqmt2v7lq" path="res://hud.gd" id="4_otwa2"]
+[ext_resource type="PackedScene" uid="uid://dueeuyv31ok4h" path="res://golem.tscn" id="5_5ckkb"]
+[ext_resource type="PackedScene" uid="uid://gmrcp12s5w8x" path="res://mururata.tscn" id="5_t8jxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmwf6"]
+size = Vector2(18989, 94.25)
+
+[node name="Mundo" type="Node2D" unique_id=250229063]
+
+[node name="fondo andino" type="Sprite2D" parent="." unique_id=237050585]
+position = Vector2(55, -58)
+texture = ExtResource("1_lgngo")
+
+[node name="fondo andino2" type="Sprite2D" parent="." unique_id=1841117568]
+position = Vector2(2800, -58)
+texture = ExtResource("1_lgngo")
+
+[node name="fondo andino3" type="Sprite2D" parent="." unique_id=2096307153]
+position = Vector2(5400, -58)
+texture = ExtResource("1_lgngo")
+
+[node name="fondo andino4" type="Sprite2D" parent="." unique_id=1972383502]
+position = Vector2(8100, -58)
+texture = ExtResource("2_aou4a")
+
+[node name="fondo andino5" type="Sprite2D" parent="." unique_id=652845236]
+position = Vector2(10846, -64)
+texture = ExtResource("2_aou4a")
+
+[node name="fondo andino6" type="Sprite2D" parent="." unique_id=1247901541]
+position = Vector2(13587, -58)
+texture = ExtResource("2_aou4a")
+
+[node name="fondo andino7" type="Sprite2D" parent="." unique_id=79781295]
+position = Vector2(16346, -58)
+texture = ExtResource("3_2hh7m")
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1127644832]
+position = Vector2(500, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=1953799788]
+position = Vector2(-325, 650.875)
+shape = SubResource("RectangleShape2D_vmwf6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Suelo" unique_id=1392522705]
+position = Vector2(7725.5, 20)
+shape = SubResource("RectangleShape2D_vmwf6")
+
+[node name="sapo" parent="." unique_id=1716913186 instance=ExtResource("3_fw4w5")]
+position = Vector2(654, 380)
+
+[node name="sapo2" parent="." unique_id=1223857771 instance=ExtResource("3_fw4w5")]
+position = Vector2(3859, 343)
+up_direction = Vector2(1, 0)
+
+[node name="sapo3" parent="." unique_id=788037310 instance=ExtResource("3_fw4w5")]
+position = Vector2(4081, 342)
+
+[node name="sapo4" parent="." unique_id=1323586164 instance=ExtResource("3_fw4w5")]
+position = Vector2(6596, 279)
+scale = Vector2(2, 2)
+vidas = 10
+
+[node name="Mururata" parent="." unique_id=166644418 instance=ExtResource("5_t8jxu")]
+position = Vector2(16307, 189)
+
+[node name="Amaru" parent="." unique_id=1659949355 instance=ExtResource("1_6ba58")]
+position = Vector2(-300, 149)
+
+[node name="Camera2D" type="Camera2D" parent="Amaru" unique_id=1700671371]
+
+[node name="Golem" parent="." unique_id=1115629626 instance=ExtResource("5_5ckkb")]
+position = Vector2(8201, 231)
+vidas = 3
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=475084698 groups=["hud"]]
+script = ExtResource("4_otwa2")
+
+[node name="Vidasamaru" type="Label" parent="HUD" unique_id=166943734]
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 291.0
+offset_bottom = 88.0
+
+[node name="Vidassapo" type="Label" parent="HUD" unique_id=1963137326]
+offset_left = 1025.0
+offset_right = 1422.0
+offset_bottom = 50.0

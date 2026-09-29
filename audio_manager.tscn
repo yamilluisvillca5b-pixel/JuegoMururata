@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bv266id4hqkrc"]
+
+[ext_resource type="AudioStream" uid="uid://c53vnjad6nnlp" path="res://audio/poorkidmusic-anime-8-bit-no-copy-right-386529.mp3" id="1_jisk1"]
+
+[node name="AudioManager" type="Node" unique_id=677324049]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=97678771]
+stream = ExtResource("1_jisk1")

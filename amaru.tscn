@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://crqf6bwbddgd0"]
+
+[ext_resource type="Script" uid="uid://s1y7kmw8m1ey" path="res://amaru.gd" id="1_y7kle"]
+[ext_resource type="Texture2D" uid="uid://f2tbkic8jhj3" path="res://Character_attack_animation_sprit__2K_20260922092737-removebg-preview.png" id="2_d85y8"]
+[ext_resource type="Texture2D" uid="uid://mb8i7qw6j2b0" path="res://descarga__1_-removebg-preview.png" id="2_hyf87"]
+[ext_resource type="Texture2D" uid="uid://dhrmkm1ew6wis" path="res://Warrior_performing_lightning_def__2K_20260928194209-removebg-preview.png" id="4_d85y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bch2m"]
+atlas = ExtResource("2_d85y8")
+region = Rect2(446, 248, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11qfb"]
+atlas = ExtResource("2_d85y8")
+region = Rect2(223, 0, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdin7"]
+atlas = ExtResource("2_d85y8")
+region = Rect2(223, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tilk"]
+atlas = ExtResource("2_d85y8")
+region = Rect2(446, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d85y8"]
+atlas = ExtResource("2_hyf87")
+region = Rect2(446, 248, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ahn6"]
+atlas = ExtResource("4_d85y8")
+region = Rect2(446, 0, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgnup"]
+atlas = ExtResource("4_d85y8")
+region = Rect2(0, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpw10"]
+atlas = ExtResource("4_d85y8")
+region = Rect2(223, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7kle"]
+atlas = ExtResource("2_hyf87")
+region = Rect2(446, 0, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyf87"]
+atlas = ExtResource("2_hyf87")
+region = Rect2(223, 248, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05rie"]
+atlas = ExtResource("2_hyf87")
+region = Rect2(0, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4ndv"]
+atlas = ExtResource("2_hyf87")
+region = Rect2(223, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6n1p"]
+atlas = ExtResource("2_hyf87")
+region = Rect2(446, 124, 223, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_625hf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bch2m")
+}],
+"loop": 1,
+"name": &"ataque1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11qfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdin7")
+}],
+"loop": 1,
+"name": &"ataque2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tilk")
+}],
+"loop": 1,
+"name": &"ataque3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d85y8")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ahn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgnup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpw10")
+}],
+"loop": 1,
+"name": &"contra",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7kle")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyf87")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05rie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4ndv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6n1p")
+}],
+"loop": 1,
+"name": &"rum",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmwf6"]
+
+[node name="Amaru" type="CharacterBody2D" unique_id=1659949355 groups=["jugador"]]
+script = ExtResource("1_y7kle")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=731877752]
+sprite_frames = SubResource("SpriteFrames_625hf")
+animation = &"contra"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=698100982]
+shape = SubResource("RectangleShape2D_vmwf6")

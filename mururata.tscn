@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://gmrcp12s5w8x"]
+
+[ext_resource type="Texture2D" uid="uid://dhxek48f8f583" path="res://Creature_sprite_sheet_animation_2K_20260928202726-removebg-preview.png" id="1_df66w"]
+[ext_resource type="Script" uid="uid://b8cdiq6n5q5s1" path="res://mururata.gd" id="1_k2eaj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2eaj"]
+atlas = ExtResource("1_df66w")
+region = Rect2(0, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jaf7"]
+atlas = ExtResource("1_df66w")
+region = Rect2(223, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbkwy"]
+atlas = ExtResource("1_df66w")
+region = Rect2(446, 124, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqbu5"]
+atlas = ExtResource("1_df66w")
+region = Rect2(0, 0, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xow4l"]
+atlas = ExtResource("1_df66w")
+region = Rect2(223, 0, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rekap"]
+atlas = ExtResource("1_df66w")
+region = Rect2(446, 0, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5iw6"]
+atlas = ExtResource("1_df66w")
+region = Rect2(0, 248, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjgww"]
+atlas = ExtResource("1_df66w")
+region = Rect2(223, 248, 223, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lu40"]
+atlas = ExtResource("1_df66w")
+region = Rect2(446, 248, 223, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_625hf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2eaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jaf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbkwy")
+}],
+"loop": 1,
+"name": &"atake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqbu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xow4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rekap")
+}],
+"loop": 1,
+"name": &"caminar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5iw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjgww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lu40")
+}],
+"loop": 1,
+"name": &"morir",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmwf6"]
+
+[node name="Mururata" type="CharacterBody2D" unique_id=166644418 groups=["enemigo"]]
+scale = Vector2(3, 3)
+script = ExtResource("1_k2eaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=553731622]
+sprite_frames = SubResource("SpriteFrames_625hf")
+animation = &"morir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83685244]
+shape = SubResource("RectangleShape2D_vmwf6")
